@@ -74,3 +74,6 @@
                                                    usaremos este comando para hacer una copia previa de los 
                                                    datos en local, para volver a realizar los datos que quisieramos
                                                    y "empujarlos" con "push"
+
+~ Por ultimo, si queremos eliminar el repositorio, usaremos el comando:
+    * "rm -rf .git": Con este comando eliminaremos los archivos de git que se hayan creado
