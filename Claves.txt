@@ -66,8 +66,9 @@
 
     - Con los siguientes comandos podremos subir los cambios a la nube, en este caso github
         * "git remote add origin 'url_del_repo_en_github'": Este comando iniciara el repositorio en la nube
-        * "git push -u origin 'nombre_rama_a_subir'": Con este comando "empujamos" todo lo que hallamos 
-                                                      comiteado en git
+        * "git push -u origin 'nombre_rama_a_subir'": Usaremos este comando para "empujar" todo lo que hallamos 
+                                                      comiteado en git si la rama no esta creada en la nube
+        * "git push origin 'nombre_de_la_rama'": Con este subiremos los cambios si la rama ya esta creada
         * "git pull origin 'nombre_rama_a_subir'": Si hay errores debidos a cambios en la nube que no se hayan 
                                                    agregado en local previamente a subir los datos a la nube,
                                                    usaremos este comando para hacer una copia previa de los 
