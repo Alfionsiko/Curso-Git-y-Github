@@ -1,0 +1,75 @@
+~ Vamos a ver los comandos que debemos conocer si o si para usar git
+
+    - Comandos basicos:
+       
+        * "git config": Con este comando podemos empezar a configurar nuestro repositorio, en este 
+                        caso queremos que loa configuracion sea a nivel global por lo que añadiremos a continuacion
+                        de "config" lo siguiente:
+            - "--global user.namne": 
+                Aqui indicaremos nuestro nombre para identificarnos, ejemplo, "Alfonso Serna"
+            - "--global user.email": 
+                Aqui indicaremos nuestro email, en este caso no es necesario las comillas dobles
+            - "--global core.editor 'code --wait'": 
+                De esta manera configuraremos VS Code como nuestro editor de texto
+            - "--global -e":
+                Con este comando abriremos el archivo de configuracion en el editor que configuramos, en nuestro caso, vs code.
+            - "--global core.autocrlf true":
+                Con este comando configuramos los saltos de linea que son diferentes para win y linux/mac. En win lo dejaremos
+                asi, pero si usamos linux o macOS deberemos cambiar "true" por "input"
+        * "ls": Con este comando tendremos una vista de los archivos y las carpetas 
+                de la Carpeta donde nos encontremos
+                - "ls -a": 
+                    Con este comando podremos ver todos los archivos, incluidos los ocultos de la carpeta
+        * "cd": Con este comando podremos movernos por las carpetas, ya sea añadiendo "cd .." para volver a la 
+                carpeta origen, o poniendo el nombre de la carpeta concreta a la que queremos ir "cd 'nombrecarpeta'"
+        * "git --version": Con este comando podremos saber que version de git tenemos instalada   
+        * "pwd": Con este comando podemos confirmar en que carpeta nos encontramos
+        * "mkdir": con este comando podremos crear carpetas en el directorio donde nos encontremos 
+                   "mkdir nombrecarpetanueva"
+        * "git init": Con este comando inicializamos git en la carpeta donde nos encontremos.
+        * "git status": Este comando te muestra el estado del repositorio, en el punto donde 
+                        se encuentran los archivos, y todo lo que falte por realizar en la rama
+        * "git add": con este comando podremos añadir al seguimiento de git el archivo/os que le 
+                     digamos "git add nombredelarchivo nombredelarchivo2 nombredelarchivo3..."
+        * "git commit -m": Este es un comando muy importante, ya que es el que gurada los cambios,
+                           y donde tendremos que dar una breve explicacion que haga referencia al cambios
+                           que hemos realizado. "git commit -m "BreveExplicacion"
+        * "rm": con este comando podemos eliminar el archivo que le indiquemos. "rm archivo_a_eliminar"
+            - "git rm": si realizas la llamada del comando directamente con "git" no sera necesario agregarlo
+                        con "git add".
+        * "git restore": Con este comando quitaremos el archivo de la etapa previa al stage. 
+                                  "git restore nombre_archivo"
+            - "--staged": Si el archivo se encuentra en la etapa de stage, debemos agregar 
+                          este comando para devolverlo al paso previo             
+        * "git mv": Con este comando podremos renombrar archivos. "git mv nombre_archivo nuevo_nombre"
+        * "git status -s": Nos ofrece la informacion de forma mas resumida
+        * "git diff": Este comando nos mostrara los cambios que se van a realizar, para verlos de forma mas visual
+            - "--staged": Si hay cambios en la etapa de staged podremos verlos añadiendole esto al comando anterior
+                          "git diff --staged"
+        * "git log --oneline": Este comando nos mostrara los cambios hechos con "commit" junto con un identificador
+        * "git branch": nos mostrara la rama en la que nos encontramos, es necesario tener la rama libre de tareas
+        * "git checkout -b": Este comando crea una nueva rama para trabajar en ella sin afectar los cambios a la rama
+                             principal donde este el proyecto. "git checkout -b nombre_rama"
+            - Si solo llamamos a la funcion "git checkout nombre_rama" cambiaremos a la rama que le indiquemos
+        * "cat": Este comando nos mostrara el contenido del archivo que le indiquemos. "cat nombre_archivo"
+        * "git merge": Con este comando traeremos los cambios realizados de una rama a otra. Es importante recordar
+                       que debemos estar en la rama a la que queramos agregar los cambios. "git merge rama_con_cambios"
+        
+
+
+~ Si quisieramos que git, no tomara encuenta un archivo, o una carpeta, debemos crear 
+  un archivo llamado ".gitignore" y dentro de este escribir los nombres de todo aquello
+  que queremos que ignore git
+
+~ Vamos a ver que comandos necesitamos para subir nuestros archivos de git a la nube, por ejemplo "github"
+    - Primero nos logearemos en github, y seleccionaremos en crear un nuevo repositorio
+
+    - Con los siguientes comandos podremos subir los cambios a la nube, en este caso github
+        * "git remote add origin 'url_del_repo_en_github'": Este comando iniciara el repositorio en la nube
+        * "git push -u origin 'nombre_rama_a_subir'": Con este comando "empujamos" todo lo que hallamos 
+                                                      comiteado en git
+        * "git pull origin 'nombre_rama_a_subir'": Si hay errores debidos a cambios en la nube que no se hayan 
+                                                   agregado en local previamente a subir los datos a la nube,
+                                                   usaremos este comando para hacer una copia previa de los 
+                                                   datos en local, para volver a realizar los datos que quisieramos
+                                                   y "empujarlos" con "push"
